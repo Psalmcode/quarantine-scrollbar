@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body{
+    scroll-behavior: smooth;
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #fbfcfd;
+}
+
+.container{
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+h1{
+    margin: 0.625rem;
+}
+
+.box{
+    background-color: steelblue;
+    /* color: #fbfcfd; */
+    background-image: linear-gradient(-205deg, rgb(211, 42, 0), rgb(212, 44, 2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25rem;
+    height: 12.5rem;
+    margin: 0.625rem;
+    border-radius: 10px;
+    /* box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3); */
+    /* box-shadow: 0 -0.125em -1em -1em hsl(12, 60%, 45%); */
+    box-shadow: 0.2em -0.2em 0.98em rgb(0 0 0 / 10%);
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+.box:nth-of-type(even){
+    transform: translateX(-400%);
+    background-image: linear-gradient(-205deg, rgb(2, 116, 59), rgb(9, 102, 32)); 
+}
+
+.box.show{
+    transform: translateX(0%);
+
+}
+
+.box h2{
+    font-size: 45px;
+    color: #fbfcfd;
+}
+.box.box:nth-of-type(odd)::after{
+    content: 'Virus';
+    position: absolute;
+    /* top: 40%; */
+    /* left: 22%; */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #e69494;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-shadow: 0.15rem 0.34rem 0.8rem rgba(240, 45, 45, 0.8);
+    /* background-image: linear-gradient(-205deg, rgb(252, 148, 11), rgb(236, 64, 20)); */
+}
+
+.box.box:nth-of-type(even)::after{
+    content: 'Quarantine';
+    position: absolute;
+    /* top: 40%; */
+    /* left: 22%; */
+    justify-content: center;
+    color: #9ee694;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-shadow: 0.15rem 0.34rem 0.8rem rgba(7, 189, 98, 0.8);
+    /* background-image: linear-gradient(-205deg, rgb(252, 148, 11), rgb(236, 64, 20)); */
+}
